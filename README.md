@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://i.ibb.co/jMSmyRr/exaphisher.png" alt=""/>
-</p>
+
 
 <p align="center">
   <b>A easy to use, Automated phishing tool.</b> <br><br>
